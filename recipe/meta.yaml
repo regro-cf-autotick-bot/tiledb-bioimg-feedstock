@@ -24,16 +24,23 @@ requirements:
   run:
     - pyeditdistance
     - python >=3.7
-    - tiledb >=0.19
+    - tifffile
+    - tiledb-py >=0.19
     - tqdm
     - scikit-image
+    # Optional dependencies
+    - imagecodecs
+    - jsonpickle
+    - ome-zarr
+    - openslide-python
+    - tiledb-cloud
 
 test:
   imports:
     - tiledb
   commands:
     - pip list
-    # - pip check  # fails due to tiledb not being found
+    - pip check
   requires:
     - pip
 
