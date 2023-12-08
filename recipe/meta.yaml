@@ -31,7 +31,7 @@ requirements:
     - jsonpickle
     - ome-zarr
     - openslide-python
-    - tiledb-cloud
+    # - tiledb-cloud
 
 test:
   imports:
