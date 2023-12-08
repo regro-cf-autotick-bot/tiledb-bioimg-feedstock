@@ -1,5 +1,5 @@
 {% set name = "tiledb-bioimg" %}
-{% set version = "0.2.1" %}
+{% set version = "0.2.6" %}
 
 package:
   name: {{ name|lower }}
@@ -7,9 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/tiledb-bioimg-{{ version }}.tar.gz
-  sha256: 7df0c634df7eafec6aed8df1f9ab742af0b4fd8b1adbc1556ccc66253d58c377
-  patches:
-    - setup.patch
+  sha256: 604a097fdf0e821538e8586990423f39f94d0ff9d3e8e56467afcfc77ba25b72
 
 build:
   noarch: python
@@ -24,16 +22,23 @@ requirements:
   run:
     - pyeditdistance
     - python >=3.7
-    - tiledb >=0.19
+    - tifffile
+    - tiledb-py >=0.19
     - tqdm
     - scikit-image
+    # Optional dependencies
+    - imagecodecs
+    - jsonpickle
+    - ome-zarr
+    - openslide-python
+    # - tiledb-cloud
 
 test:
   imports:
     - tiledb
   commands:
     - pip list
-    # - pip check  # fails due to tiledb not being found
+    - pip check
   requires:
     - pip
 
