@@ -1,13 +1,13 @@
 {% set name = "tiledb-bioimg" %}
-{% set version = "0.2.6" %}
+{% set version = "0.2.12" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/tiledb-bioimg-{{ version }}.tar.gz
-  sha256: 604a097fdf0e821538e8586990423f39f94d0ff9d3e8e56467afcfc77ba25b72
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: 829344e68dce0ff4453bd28ac00a49d26bd7f161eaba0684e0086768ec3778de
 
 build:
   noarch: python
